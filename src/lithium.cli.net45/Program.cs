@@ -9,25 +9,28 @@ namespace lithium.cli.net45 {
       static void Main(string[] args) {
          try {
             using ( var db = new NetDbContext() ) {
-               Console.Write("Enter a name for a new entry: ");
-               var name = Console.ReadLine();
-               var person = new Person
-                               {
-                                  PersonId = Guid.NewGuid(),
-                                  Name = name,
-                               };
-               db.Persons.Add(person);
-               db.SaveChanges();
-               Console.WriteLine("Saved.");
+               Console.Write("Enter a new MAC address: ");
+               var newMac = Console.ReadLine();
 
-               var query = from p in db.Persons
-                           orderby p.Name
-                           select p;
-
-               Console.WriteLine("All persons in the database:");
-               foreach ( var item in query ) {
-                  Console.WriteLine(item.Name);
-               }
+//
+//
+//               var person = new Person
+//                               {
+//                                  PersonId = Guid.NewGuid(),
+//                                  Name = name,
+//                               };
+//               db.Persons.Add(person);
+//               db.SaveChanges();
+//               Console.WriteLine("Saved.");
+//
+//               var query = from p in db.Persons
+//                           orderby p.Name
+//                           select p;
+//
+//               Console.WriteLine("All persons in the database:");
+//               foreach ( var item in query ) {
+//                  Console.WriteLine(item.Name);
+//               }
             }
          }
          catch ( Exception ex ) {

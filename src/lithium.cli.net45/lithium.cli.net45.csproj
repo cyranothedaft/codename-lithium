@@ -48,6 +48,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Device.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceType.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactorySettings.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceType.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IpAddrAssignType.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mfgr.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetConnectorType.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="netDbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,7 +93,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>netDbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs">
+    <Compile Include="Network.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkNode.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkService.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkServiceType.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatingSystem.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Owner.cs">
+      <DependentUpon>netDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerType.cs">
       <DependentUpon>netDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

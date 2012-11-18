@@ -12,9 +12,8 @@ namespace lithium.cli.net45
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class FactorySettings
     {
-        public System.Guid PersonId { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
     }
 }
