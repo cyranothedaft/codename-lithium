@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NetDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NetDbModelStoreContainer">
+    <EntitySet Name="Models" EntityType="NetDbModel.Store.Models" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeviceTypes" EntityType="NetDbModel.Store.DeviceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mfgrs" EntityType="NetDbModel.Store.Mfgrs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactorySettingses" EntityType="NetDbModel.Store.FactorySettingses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OwnerTypes" EntityType="NetDbModel.Store.OwnerTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="NetDbModel.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OperatingSystems" EntityType="NetDbModel.Store.OperatingSystems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Networks" EntityType="NetDbModel.Store.Networks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NetworkNodes" EntityType="NetDbModel.Store.NetworkNodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IpAddrAssignTypes" EntityType="NetDbModel.Store.IpAddrAssignTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NetworkServiceTypes" EntityType="NetDbModel.Store.NetworkServiceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NetworkServices" EntityType="NetDbModel.Store.NetworkServices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Interfaces" EntityType="NetDbModel.Store.Interfaces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Devices" EntityType="NetDbModel.Store.Devices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InterfaceTypes" EntityType="NetDbModel.Store.InterfaceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NetConnectorTypes" EntityType="NetDbModel.Store.NetConnectorTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Owners" EntityType="NetDbModel.Store.Owners" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ModelDeviceType" Association="NetDbModel.Store.ModelDeviceType">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="DeviceType" EntitySet="DeviceTypes" />
+    </AssociationSet>
+    <AssociationSet Name="ModelMfgr" Association="NetDbModel.Store.ModelMfgr">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="Mfgr" EntitySet="Mfgrs" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceOwner" Association="NetDbModel.Store.DeviceOwner">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Owner" EntitySet="Owners" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceModel" Association="NetDbModel.Store.DeviceModel">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="InterfaceInterfaceType" Association="NetDbModel.Store.InterfaceInterfaceType">
+      <End Role="Interface" EntitySet="Interfaces" />
+      <End Role="InterfaceType" EntitySet="InterfaceTypes" />
+    </AssociationSet>
+    <AssociationSet Name="InterfaceNetConnectorType" Association="NetDbModel.Store.InterfaceNetConnectorType">
+      <End Role="Interface" EntitySet="Interfaces" />
+      <End Role="NetConnectorType" EntitySet="NetConnectorTypes" />
+    </AssociationSet>
+    <AssociationSet Name="InterfaceDevice" Association="NetDbModel.Store.InterfaceDevice">
+      <End Role="Interface" EntitySet="Interfaces" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Models">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Line" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Trim" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeviceTypeId" Type="int" Nullable="false" />
+    <Property Name="MfgrId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mfgrs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactorySettingses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OwnerTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OperatingSystems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Networks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NetworkNodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IpAddrAssignTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NetworkServiceTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NetworkServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Interfaces">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterfaceTypeId" Type="int" Nullable="false" />
+    <Property Name="NetConnectorTypeId" Type="int" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Devices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InstanceNo" Type="int" Nullable="false" />
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="ModelId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InterfaceTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NetConnectorTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ModelDeviceType">
+    <End Role="Model" Type="NetDbModel.Store.Models" Multiplicity="*" />
+    <End Role="DeviceType" Type="NetDbModel.Store.DeviceTypes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="DeviceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModelMfgr">
+    <End Role="Model" Type="NetDbModel.Store.Models" Multiplicity="*" />
+    <End Role="Mfgr" Type="NetDbModel.Store.Mfgrs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Mfgr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="MfgrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceOwner">
+    <End Role="Device" Type="NetDbModel.Store.Devices" Multiplicity="*" />
+    <End Role="Owner" Type="NetDbModel.Store.Owners" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceModel">
+    <End Role="Device" Type="NetDbModel.Store.Devices" Multiplicity="*" />
+    <End Role="Model" Type="NetDbModel.Store.Models" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InterfaceInterfaceType">
+    <End Role="Interface" Type="NetDbModel.Store.Interfaces" Multiplicity="*" />
+    <End Role="InterfaceType" Type="NetDbModel.Store.InterfaceTypes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="InterfaceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Interface">
+        <PropertyRef Name="InterfaceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InterfaceNetConnectorType">
+    <End Role="Interface" Type="NetDbModel.Store.Interfaces" Multiplicity="*" />
+    <End Role="NetConnectorType" Type="NetDbModel.Store.NetConnectorTypes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="NetConnectorType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Interface">
+        <PropertyRef Name="NetConnectorTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InterfaceDevice">
+    <End Role="Interface" Type="NetDbModel.Store.Interfaces" Multiplicity="*" />
+    <End Role="Device" Type="NetDbModel.Store.Devices" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Interface">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NetDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="NetDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Models" EntityType="NetDbModel.Model" />
+          <EntitySet Name="DeviceTypes" EntityType="NetDbModel.DeviceType" />
+          <EntitySet Name="Mfgrs" EntityType="NetDbModel.Mfgr" />
+          <EntitySet Name="FactorySettingses" EntityType="NetDbModel.FactorySettings" />
+          <EntitySet Name="OwnerTypes" EntityType="NetDbModel.OwnerType" />
+          <EntitySet Name="Locations" EntityType="NetDbModel.Location" />
+          <EntitySet Name="OperatingSystems" EntityType="NetDbModel.OperatingSystem" />
+          <EntitySet Name="Networks" EntityType="NetDbModel.Network" />
+          <EntitySet Name="NetworkNodes" EntityType="NetDbModel.NetworkNode" />
+          <EntitySet Name="IpAddrAssignTypes" EntityType="NetDbModel.IpAddrAssignType" />
+          <EntitySet Name="NetworkServiceTypes" EntityType="NetDbModel.NetworkServiceType" />
+          <EntitySet Name="NetworkServices" EntityType="NetDbModel.NetworkService" />
+          <EntitySet Name="Interfaces" EntityType="NetDbModel.Interface" />
+          <EntitySet Name="Devices" EntityType="NetDbModel.Device" />
+          <EntitySet Name="InterfaceTypes" EntityType="NetDbModel.InterfaceType" />
+          <EntitySet Name="NetConnectorTypes" EntityType="NetDbModel.NetConnectorType" />
+          <EntitySet Name="Owners" EntityType="NetDbModel.Owner" />
+          <AssociationSet Name="ModelDeviceType" Association="NetDbModel.ModelDeviceType">
+            <End Role="Model" EntitySet="Models" />
+            <End Role="DeviceType" EntitySet="DeviceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="ModelMfgr" Association="NetDbModel.ModelMfgr">
+            <End Role="Model" EntitySet="Models" />
+            <End Role="Mfgr" EntitySet="Mfgrs" />
+          </AssociationSet>
+          <AssociationSet Name="DeviceOwner" Association="NetDbModel.DeviceOwner">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="Owner" EntitySet="Owners" />
+          </AssociationSet>
+          <AssociationSet Name="DeviceModel" Association="NetDbModel.DeviceModel">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="Model" EntitySet="Models" />
+          </AssociationSet>
+          <AssociationSet Name="InterfaceInterfaceType" Association="NetDbModel.InterfaceInterfaceType">
+            <End Role="Interface" EntitySet="Interfaces" />
+            <End Role="InterfaceType" EntitySet="InterfaceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="InterfaceNetConnectorType" Association="NetDbModel.InterfaceNetConnectorType">
+            <End Role="Interface" EntitySet="Interfaces" />
+            <End Role="NetConnectorType" EntitySet="NetConnectorTypes" />
+          </AssociationSet>
+          <AssociationSet Name="InterfaceDevice" Association="NetDbModel.InterfaceDevice">
+            <End Role="Interface" EntitySet="Interfaces" />
+            <End Role="Device" EntitySet="Devices" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Line" Nullable="false" />
+          <Property Type="String" Name="Trim" Nullable="false" />
+          <NavigationProperty Name="DeviceType" Relationship="NetDbModel.ModelDeviceType" FromRole="Model" ToRole="DeviceType" />
+          <Property Type="Int32" Name="DeviceTypeId" Nullable="false" />
+          <NavigationProperty Name="Mfgr" Relationship="NetDbModel.ModelMfgr" FromRole="Model" ToRole="Mfgr" />
+          <Property Type="Int32" Name="MfgrId" Nullable="false" />
+          <NavigationProperty Name="Devices" Relationship="NetDbModel.DeviceModel" FromRole="Model" ToRole="Device" />
+        </EntityType>
+        <EntityType Name="DeviceType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Models" Relationship="NetDbModel.ModelDeviceType" FromRole="DeviceType" ToRole="Model" />
+        </EntityType>
+        <EntityType Name="Mfgr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Models" Relationship="NetDbModel.ModelMfgr" FromRole="Mfgr" ToRole="Model" />
+        </EntityType>
+        <EntityType Name="FactorySettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="OwnerType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="OperatingSystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Network">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="NetworkNode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="IpAddrAssignType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="NetworkServiceType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="NetworkService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Interface">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="InterfaceType" Relationship="NetDbModel.InterfaceInterfaceType" FromRole="Interface" ToRole="InterfaceType" />
+          <Property Type="Int32" Name="InterfaceTypeId" Nullable="false" />
+          <NavigationProperty Name="NetConnectorType" Relationship="NetDbModel.InterfaceNetConnectorType" FromRole="Interface" ToRole="NetConnectorType" />
+          <Property Type="Int32" Name="NetConnectorTypeId" Nullable="false" />
+          <NavigationProperty Name="Device" Relationship="NetDbModel.InterfaceDevice" FromRole="Interface" ToRole="Device" />
+          <Property Type="Int32" Name="DeviceId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="InstanceNo" Nullable="false" />
+          <NavigationProperty Name="Owner" Relationship="NetDbModel.DeviceOwner" FromRole="Device" ToRole="Owner" />
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <NavigationProperty Name="Model" Relationship="NetDbModel.DeviceModel" FromRole="Device" ToRole="Model" />
+          <Property Type="Int32" Name="ModelId" Nullable="false" />
+          <NavigationProperty Name="Interfaces" Relationship="NetDbModel.InterfaceDevice" FromRole="Device" ToRole="Interface" />
+        </EntityType>
+        <EntityType Name="InterfaceType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Interfaces" Relationship="NetDbModel.InterfaceInterfaceType" FromRole="InterfaceType" ToRole="Interface" />
+        </EntityType>
+        <EntityType Name="NetConnectorType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Interfaces" Relationship="NetDbModel.InterfaceNetConnectorType" FromRole="NetConnectorType" ToRole="Interface" />
+        </EntityType>
+        <EntityType Name="Owner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Devices" Relationship="NetDbModel.DeviceOwner" FromRole="Owner" ToRole="Device" />
+        </EntityType>
+        <Association Name="ModelDeviceType">
+          <End Type="NetDbModel.Model" Role="Model" Multiplicity="*" />
+          <End Type="NetDbModel.DeviceType" Role="DeviceType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="DeviceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelMfgr">
+          <End Type="NetDbModel.Model" Role="Model" Multiplicity="*" />
+          <End Type="NetDbModel.Mfgr" Role="Mfgr" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Mfgr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="MfgrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DeviceOwner">
+          <End Type="NetDbModel.Device" Role="Device" Multiplicity="*" />
+          <End Type="NetDbModel.Owner" Role="Owner" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Owner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="OwnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DeviceModel">
+          <End Type="NetDbModel.Device" Role="Device" Multiplicity="*" />
+          <End Type="NetDbModel.Model" Role="Model" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InterfaceInterfaceType">
+          <End Type="NetDbModel.Interface" Role="Interface" Multiplicity="*" />
+          <End Type="NetDbModel.InterfaceType" Role="InterfaceType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="InterfaceType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Interface">
+              <PropertyRef Name="InterfaceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InterfaceNetConnectorType">
+          <End Type="NetDbModel.Interface" Role="Interface" Multiplicity="*" />
+          <End Type="NetDbModel.NetConnectorType" Role="NetConnectorType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="NetConnectorType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Interface">
+              <PropertyRef Name="NetConnectorTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InterfaceDevice">
+          <End Type="NetDbModel.Interface" Role="Interface" Multiplicity="*" />
+          <End Type="NetDbModel.Device" Role="Device" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Interface">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NetDbModelStoreContainer" CdmEntityContainer="NetDbContext">
+    <EntitySetMapping Name="Models">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Model)">
+        <MappingFragment StoreEntitySet="Models">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="Trim" ColumnName="Trim" />
+          <ScalarProperty Name="DeviceTypeId" ColumnName="DeviceTypeId" />
+          <ScalarProperty Name="MfgrId" ColumnName="MfgrId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.DeviceType)">
+        <MappingFragment StoreEntitySet="DeviceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mfgrs">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Mfgr)">
+        <MappingFragment StoreEntitySet="Mfgrs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactorySettingses">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.FactorySettings)">
+        <MappingFragment StoreEntitySet="FactorySettingses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OwnerTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.OwnerType)">
+        <MappingFragment StoreEntitySet="OwnerTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatingSystems">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.OperatingSystem)">
+        <MappingFragment StoreEntitySet="OperatingSystems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Networks">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Network)">
+        <MappingFragment StoreEntitySet="Networks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkNodes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.NetworkNode)">
+        <MappingFragment StoreEntitySet="NetworkNodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IpAddrAssignTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.IpAddrAssignType)">
+        <MappingFragment StoreEntitySet="IpAddrAssignTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkServiceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.NetworkServiceType)">
+        <MappingFragment StoreEntitySet="NetworkServiceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkServices">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.NetworkService)">
+        <MappingFragment StoreEntitySet="NetworkServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interfaces">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Interface)">
+        <MappingFragment StoreEntitySet="Interfaces">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InterfaceTypeId" ColumnName="InterfaceTypeId" />
+          <ScalarProperty Name="NetConnectorTypeId" ColumnName="NetConnectorTypeId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Device)">
+        <MappingFragment StoreEntitySet="Devices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="InstanceNo" ColumnName="InstanceNo" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterfaceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.InterfaceType)">
+        <MappingFragment StoreEntitySet="InterfaceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetConnectorTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.NetConnectorType)">
+        <MappingFragment StoreEntitySet="NetConnectorTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Owner)">
+        <MappingFragment StoreEntitySet="Owners">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

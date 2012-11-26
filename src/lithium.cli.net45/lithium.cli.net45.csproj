@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -48,101 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Device.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeviceType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FactorySettings.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Interface.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="InterfaceType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IpAddrAssignType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Location.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mfgr.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NetConnectorType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="netDbModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>netDbModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="netDbModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="netDbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>netDbModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Network.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NetworkNode.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NetworkService.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NetworkServiceType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OperatingSystem.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Owner.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OwnerType.cs">
-      <DependentUpon>netDbModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <EntityDeploy Include="netDbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>netDbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="netDbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>netDbModel.edmx</DependentUpon>
-      <LastGenOutput>netDbModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="netDbModel.edmx.diagram">
-      <DependentUpon>netDbModel.edmx</DependentUpon>
-    </None>
-    <None Include="netDbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>netDbModel.edmx</DependentUpon>
-      <LastGenOutput>netDbModel.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="netDbModel.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

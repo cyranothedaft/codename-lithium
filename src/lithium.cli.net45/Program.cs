@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace lithium.cli.net45 {
    class Program {
       static void Main(string[] args) {
-         try {
-            using ( var db = new NetDbContext() ) {
-               Console.Write("Enter a new MAC address: ");
-               var newMac = Console.ReadLine();
+//         try {
+//            using ( var db = new NetDbContext() ) {
+//               Console.Write("Enter a new MAC address: ");
+//               var newMac = Console.ReadLine();
 
 //
 //
@@ -31,12 +31,12 @@ namespace lithium.cli.net45 {
 //               foreach ( var item in query ) {
 //                  Console.WriteLine(item.Name);
 //               }
-            }
-         }
-         catch ( Exception ex ) {
-            Console.WriteLine("==============================");
-            Console.WriteLine(ex);
-         }
+//            }
+//         }
+//         catch ( Exception ex ) {
+//            Console.WriteLine("==============================");
+//            Console.WriteLine(ex);
+//         }
 
          Console.WriteLine("Press any key to exit...");
          Console.ReadKey();

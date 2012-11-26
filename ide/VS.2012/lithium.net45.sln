@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.cli.net45", "..\..\src\lithium.cli.net45\lithium.cli.net45.csproj", "{B495DEA0-8129-4D80-AD47-26848D7C3349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.core.lib.net45", "..\..\src\lithium.core.lib.net45\lithium.core.lib.net45.csproj", "{8DCE8E56-60DE-439B-B670-3A8DB1685936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.gui-wpf.net45", "..\..\src\lithium.gui-wpf.net45\lithium.gui-wpf.net45.csproj", "{7853D955-FF98-4266-A408-AA8EFB75DFCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Release|x64.ActiveCfg = Release|Any CPU
+		{B495DEA0-8129-4D80-AD47-26848D7C3349}.Release|x86.ActiveCfg = Release|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Release|x64.ActiveCfg = Release|Any CPU
+		{8DCE8E56-60DE-439B-B670-3A8DB1685936}.Release|x86.ActiveCfg = Release|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|x64.ActiveCfg = Release|Any CPU
+		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
