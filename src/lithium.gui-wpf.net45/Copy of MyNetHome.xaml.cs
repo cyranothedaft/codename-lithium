@@ -17,13 +17,18 @@ namespace lithium.gui_wpf.net45 {
    /// <summary>
    /// Interaction logic for MyNetHome.xaml
    /// </summary>
-   public partial class MyNetHome : Page {
-      public MyNetHome() {
+   public partial class MyNetHome_old : Page {
+      public MyNetHome_old() {
          InitializeComponent();
       }
 
+      private void Button_Click_1(object sender, RoutedEventArgs e) {
+         // View data entry page
+         EntryPage entryPage = new EntryPage();
+         this.NavigationService.Navigate(entryPage);
+      }
 
-      private void btnNewDevice_Click(object sender, RoutedEventArgs e) {
+      private void Button_Click_2(object sender, RoutedEventArgs e) {
          // View data entry page
          EntryPage entryPage = new EntryPage();
          this.NavigationService.Navigate(entryPage);

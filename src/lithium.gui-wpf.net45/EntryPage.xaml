@@ -2,46 +2,94 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="645"
 	Title="MyNet - Data Entry">
 
     <Grid x:Name="dataEntryUiGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition Width="20"></ColumnDefinition>
-            <ColumnDefinition Width="20"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="44"></ColumnDefinition>
+            <ColumnDefinition Width="305*"></ColumnDefinition>
+            <ColumnDefinition Width="296*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="41"/>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label VerticalAlignment="Center" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="18" Foreground="#0066cc" Grid.ColumnSpan="99">Enter Data...</Label>
+        <Label VerticalAlignment="Center" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="18" Foreground="#0066cc" Grid.ColumnSpan="3" Content="New Device..." Height="30" Margin="0,1,0,10" Grid.Row="0"/>
 
-        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical">
-            <ToggleButton x:Name="btnNewDevice" Checked="btnNewDevice_Checked" >New device...</ToggleButton>
-        </StackPanel>
-        
-        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
-            <ToggleButton x:Name="btnNewDeviceByMac" Click="btnNewDeviceByMac_Click">MAC address</ToggleButton>
-            <ToggleButton>Model</ToggleButton>
-            <ToggleButton>Name</ToggleButton>
-        </StackPanel>
-        
-        <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical">
-            <TextBox x:Name="txtMac" Height="23" TextWrapping="Wrap" Text="MAC..." TextChanged="txtMac_TextChanged"/>
-            <Button Content="from Camera..."></Button>
-            <Button Content="..."></Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="3" Grid.Row="1">
-            <TextBlock x:Name="txtProgress" TextWrapping="Wrap" Text="[progress]" Foreground="#0066cc" HorizontalAlignment="Center" VerticalAlignment="Top" />
-
+        <StackPanel x:Name="entryElementsPanel" Grid.Column="1" Grid.Row="2">
             <Grid x:Name="newDeviceInfoGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="0">MAC</Label>
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="1">Mfgr</Label>
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="2">Model</Label>
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="3">Owner</Label>
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="4">Name</Label>
+                                                                                                        
+                <Button x:Name="btnDeviceValueMac" Content="[mac]"  Grid.Column="1" Grid.Row="0" Click="btnDeviceValueMac_Click"/>
+                <Button x:Name="btnDeviceValueMfgr" Content="[mfgr]" Grid.Column="1" Grid.Row="1" Click="btnDeviceValueMfgr_Click" />
+                <Button x:Name="btnDeviceValueModel" Content="[model]" Grid.Column="1" Grid.Row="2" Click="btnDeviceValueModel_Click" />
+                <Button x:Name="btnDeviceValueOwner" Content="[owner]"  Grid.Column="1" Grid.Row="3" Click="btnDeviceValueOwner_Click"/>
+                <Button x:Name="btnDeviceValueName" Content="[name]"  Grid.Column="1" Grid.Row="4" Click="btnDeviceValueName_Click"/>
+            </Grid>
+
+            <Button x:Name="btnSaveNewDevice" Content="Save this:" HorizontalAlignment="Center" Padding="12,3" Click="btnSaveNewDevice_Click" Margin="0,12,0,6"/>
+            <Label Foreground="#0066cc" >[new device details]</Label>
+        </StackPanel>
+        
+        <StackPanel Visibility="Hidden" x:Name="entryDetailPanelMac" Grid.Column="2" Grid.Row="2">
+            <Label Foreground="#0066cc">Enter MAC address</Label>
+<!--            <custom:MaskedTextBox x:Name="txtMac" TextWrapping="NoWrap"  Text="" TextChanged="txtMac_TextChanged" Mask="&gt;AA\:AA\:AA\:AA\:AA\:AA\" FontFamily="Segoe UI Mono" FontSize="14" Margin="20,0"/>-->
+            <xctk:MaskedTextBox x:Name="txtMac" Margin="25,0" FontSize="16" FontFamily="Segoe UI Mono" TextChanged="txtMac_TextChanged" Mask="&gt;AA\:AA\:AA\:AA\:AA\:AA" />
+            <Label Foreground="#0066cc">Using:</Label>
+            <Label x:Name="lblMacValue" Foreground="#0066cc" HorizontalAlignment="Center">[mac]</Label>
+            <Button x:Name="btnAcceptEntryMac" Content="&lt;&lt; Accept" HorizontalAlignment="Center" Padding="12,3" Click="btnAcceptEntryMac_Click"/>
+        </StackPanel>
+
+        <StackPanel x:Name="entryDetailPanelMfgr" Grid.Column="2" Grid.Row="2">
+            <Label Foreground="#0066cc">Choose Device Mfgr</Label>
+
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <ComboBox x:Name="cboNewDeviceMfgr" MaxDropDownHeight="400" ShouldPreserveUserEnteredPrefix="True" IsEditable="True" SelectionChanged="cboNewDeviceMfgr_SelectionChanged" >
+                    <ComboBoxItem Content="[select one]"/>
+                </ComboBox>
+                <!--<Button x:Name="btnNewMfgr" Content="+" Grid.Column="1" Click="btnNewMfgr_Click"/>-->
+            </Grid>
+
+            <Label Foreground="#0066cc">:</Label>
+            <Button x:Name="btnAcceptEntryMfgr" Content="&lt;&lt; Accept this:" HorizontalAlignment="Center" Padding="12,3" Click="btnAcceptEntryMfgr_Click"/>
+            <Label x:Name="lblMfgrValue" Foreground="#0066cc" HorizontalAlignment="Center">[owner]</Label>
+        </StackPanel>
+
+        <StackPanel Visibility="Hidden" x:Name="entryDetailPanelModel" Grid.Column="2" Grid.Row="2">
+            <Label Foreground="#0066cc">Choose Device Model</Label>
+
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -50,17 +98,46 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="0">MAC</Label>
-                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="1">Model</Label>
-                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="2">Name</Label>
-
-                <Label x:Name="lblMacValue" Foreground="#0066cc" Grid.Column="1" Grid.Row="0">[MAC]</Label>
-                <Label x:Name="lblModelValue" Foreground="#0066cc" Grid.Column="1" Grid.Row="1">[Model]</Label>
-                <Label x:Name="lblNameValue" Foreground="#0066cc" Grid.Column="1" Grid.Row="2">[Name]</Label>
+                <Label Foreground="#0066cc" Grid.Column="0" Grid.Row="0">Manufacturer</Label>
+                <Label Foreground="#0066cc" Grid.Column="1" Grid.Row="0">Model</Label>
+                <ComboBox x:Name="cboNewDeviceModelMfgr" Grid.Column="0" Grid.Row="1" MaxDropDownHeight="400" ShouldPreserveUserEnteredPrefix="True" IsEditable="True" >
+                    <ComboBoxItem Content="[select one]"/>
+                </ComboBox>
+                <ComboBox x:Name="cboNewDeviceModel" Grid.Column="1" Grid.Row="1" MaxDropDownHeight="400" ShouldPreserveUserEnteredPrefix="True" IsEditable="True" >
+                    <ComboBoxItem Content="[select one]"/>
+                </ComboBox>
+                <Label Foreground="#0066cc" Grid.ColumnSpan="2" Grid.Row="2">Interface</Label>
+                <ComboBox x:Name="cboNewDeviceInterface" Grid.ColumnSpan="2" Grid.Row="3" >
+                    <ComboBoxItem Content="[select one]"/>
+                </ComboBox>
             </Grid>
+            
+            <Label Foreground="#0066cc">:</Label>
+            <Label x:Name="lblModelValue" Foreground="#0066cc" HorizontalAlignment="Center">[model/interface]</Label>
+            <Button x:Name="btnAcceptEntryModel" Content="&lt;&lt; Accept" HorizontalAlignment="Center" Padding="12,3" Click="btnAcceptEntryModel_Click"/>
         </StackPanel>
         
+        <StackPanel Visibility="Hidden" x:Name="entryDetailPanelName" Grid.Column="2" Grid.Row="2">
+            <Label Foreground="#0066cc">Enter Device Name</Label>
+            <TextBox x:Name="txtNewDeviceName" Height="23" TextWrapping="NoWrap" Text=""/>
+            <Label Foreground="#0066cc">:</Label>
+            <Button x:Name="btnAcceptEntryName" Content="&lt;&lt; Accept this:" HorizontalAlignment="Center" Padding="12,3" Click="btnAcceptEntryName_Click"/>
+            <Label x:Name="lblNameValue" Foreground="#0066cc" HorizontalAlignment="Center">[name]</Label>
+        </StackPanel>
+        
+        <StackPanel Visibility="Hidden" x:Name="entryDetailPanelOwner" Grid.Column="2" Grid.Row="2">
+            <Label Foreground="#0066cc">Choose Device Owner</Label>
+
+            <ComboBox x:Name="cboNewDeviceOwner" Grid.Column="0" Grid.Row="1" MaxDropDownHeight="400" ShouldPreserveUserEnteredPrefix="True" IsEditable="True" >
+                <ComboBoxItem Content="[select one]"/>
+            </ComboBox>
+
+            <Label Foreground="#0066cc">:</Label>
+            <Button x:Name="btnAcceptEntryOwner" Content="&lt;&lt; Accept this:" HorizontalAlignment="Center" Padding="12,3" Click="btnAcceptEntryOwner_Click"/>
+            <Label x:Name="lblOwnerValue" Foreground="#0066cc" HorizontalAlignment="Center">[owner]</Label>
+        </StackPanel>
     </Grid>
 </Page>
