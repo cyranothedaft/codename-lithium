@@ -1,0 +1,404 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 06/11/2013 16:46:04
+-- Generated from EDMX file: C:\files\personal\proj\dev\codename-lithium\src\lithium.core.lib.net45\Data\NetDbModel.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    ALTER TABLE [Models] DROP CONSTRAINT [FK_ModelDeviceType];
+GO
+    ALTER TABLE [Models] DROP CONSTRAINT [FK_ModelMfgr];
+GO
+    ALTER TABLE [Devices] DROP CONSTRAINT [FK_DeviceOwner];
+GO
+    ALTER TABLE [Devices] DROP CONSTRAINT [FK_DeviceModel];
+GO
+    ALTER TABLE [Interfaces] DROP CONSTRAINT [FK_InterfaceInterfaceType];
+GO
+    ALTER TABLE [Interfaces] DROP CONSTRAINT [FK_InterfaceNetConnectorType];
+GO
+    ALTER TABLE [Interfaces] DROP CONSTRAINT [FK_InterfaceDevice];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [Models];
+GO
+    DROP TABLE [DeviceTypes];
+GO
+    DROP TABLE [Mfgrs];
+GO
+    DROP TABLE [FactorySettingses];
+GO
+    DROP TABLE [OwnerTypes];
+GO
+    DROP TABLE [Locations];
+GO
+    DROP TABLE [OperatingSystems];
+GO
+    DROP TABLE [Networks];
+GO
+    DROP TABLE [NetworkNodes];
+GO
+    DROP TABLE [IpAddrAssignTypes];
+GO
+    DROP TABLE [NetworkServiceTypes];
+GO
+    DROP TABLE [NetworkServices];
+GO
+    DROP TABLE [Interfaces];
+GO
+    DROP TABLE [Devices];
+GO
+    DROP TABLE [InterfaceTypes];
+GO
+    DROP TABLE [NetConnectorTypes];
+GO
+    DROP TABLE [Owners];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Models'
+CREATE TABLE [Models] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [Line] nvarchar(4000)  NOT NULL,
+    [Trim] nvarchar(4000)  NOT NULL,
+    [DeviceTypeId] int  NOT NULL,
+    [MfgrId] int  NOT NULL
+);
+GO
+
+-- Creating table 'DeviceTypes'
+CREATE TABLE [DeviceTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Mfgrs'
+CREATE TABLE [Mfgrs] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'FactorySettingses'
+CREATE TABLE [FactorySettingses] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'OwnerTypes'
+CREATE TABLE [OwnerTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Locations'
+CREATE TABLE [Locations] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'OperatingSystems'
+CREATE TABLE [OperatingSystems] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'Networks'
+CREATE TABLE [Networks] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'NetworkNodes'
+CREATE TABLE [NetworkNodes] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'IpAddrAssignTypes'
+CREATE TABLE [IpAddrAssignTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'NetworkServiceTypes'
+CREATE TABLE [NetworkServiceTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'NetworkServices'
+CREATE TABLE [NetworkServices] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'Interfaces'
+CREATE TABLE [Interfaces] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [InterfaceTypeId] int  NOT NULL,
+    [NetConnectorTypeId] int  NOT NULL,
+    [DeviceId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Devices'
+CREATE TABLE [Devices] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [InstanceNo] int  NOT NULL,
+    [OwnerId] int  NOT NULL,
+    [ModelId] int  NOT NULL
+);
+GO
+
+-- Creating table 'InterfaceTypes'
+CREATE TABLE [InterfaceTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'NetConnectorTypes'
+CREATE TABLE [NetConnectorTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Owners'
+CREATE TABLE [Owners] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Id] in table 'Models'
+ALTER TABLE [Models]
+ADD CONSTRAINT [PK_Models]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'DeviceTypes'
+ALTER TABLE [DeviceTypes]
+ADD CONSTRAINT [PK_DeviceTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Mfgrs'
+ALTER TABLE [Mfgrs]
+ADD CONSTRAINT [PK_Mfgrs]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'FactorySettingses'
+ALTER TABLE [FactorySettingses]
+ADD CONSTRAINT [PK_FactorySettingses]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'OwnerTypes'
+ALTER TABLE [OwnerTypes]
+ADD CONSTRAINT [PK_OwnerTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Locations'
+ALTER TABLE [Locations]
+ADD CONSTRAINT [PK_Locations]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'OperatingSystems'
+ALTER TABLE [OperatingSystems]
+ADD CONSTRAINT [PK_OperatingSystems]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Networks'
+ALTER TABLE [Networks]
+ADD CONSTRAINT [PK_Networks]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'NetworkNodes'
+ALTER TABLE [NetworkNodes]
+ADD CONSTRAINT [PK_NetworkNodes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'IpAddrAssignTypes'
+ALTER TABLE [IpAddrAssignTypes]
+ADD CONSTRAINT [PK_IpAddrAssignTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'NetworkServiceTypes'
+ALTER TABLE [NetworkServiceTypes]
+ADD CONSTRAINT [PK_NetworkServiceTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'NetworkServices'
+ALTER TABLE [NetworkServices]
+ADD CONSTRAINT [PK_NetworkServices]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Interfaces'
+ALTER TABLE [Interfaces]
+ADD CONSTRAINT [PK_Interfaces]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Devices'
+ALTER TABLE [Devices]
+ADD CONSTRAINT [PK_Devices]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'InterfaceTypes'
+ALTER TABLE [InterfaceTypes]
+ADD CONSTRAINT [PK_InterfaceTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'NetConnectorTypes'
+ALTER TABLE [NetConnectorTypes]
+ADD CONSTRAINT [PK_NetConnectorTypes]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Owners'
+ALTER TABLE [Owners]
+ADD CONSTRAINT [PK_Owners]
+    PRIMARY KEY ([Id] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [DeviceTypeId] in table 'Models'
+ALTER TABLE [Models]
+ADD CONSTRAINT [FK_ModelDeviceType]
+    FOREIGN KEY ([DeviceTypeId])
+    REFERENCES [DeviceTypes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ModelDeviceType'
+CREATE INDEX [IX_FK_ModelDeviceType]
+ON [Models]
+    ([DeviceTypeId]);
+GO
+
+-- Creating foreign key on [MfgrId] in table 'Models'
+ALTER TABLE [Models]
+ADD CONSTRAINT [FK_ModelMfgr]
+    FOREIGN KEY ([MfgrId])
+    REFERENCES [Mfgrs]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ModelMfgr'
+CREATE INDEX [IX_FK_ModelMfgr]
+ON [Models]
+    ([MfgrId]);
+GO
+
+-- Creating foreign key on [OwnerId] in table 'Devices'
+ALTER TABLE [Devices]
+ADD CONSTRAINT [FK_DeviceOwner]
+    FOREIGN KEY ([OwnerId])
+    REFERENCES [Owners]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DeviceOwner'
+CREATE INDEX [IX_FK_DeviceOwner]
+ON [Devices]
+    ([OwnerId]);
+GO
+
+-- Creating foreign key on [ModelId] in table 'Devices'
+ALTER TABLE [Devices]
+ADD CONSTRAINT [FK_DeviceModel]
+    FOREIGN KEY ([ModelId])
+    REFERENCES [Models]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DeviceModel'
+CREATE INDEX [IX_FK_DeviceModel]
+ON [Devices]
+    ([ModelId]);
+GO
+
+-- Creating foreign key on [InterfaceTypeId] in table 'Interfaces'
+ALTER TABLE [Interfaces]
+ADD CONSTRAINT [FK_InterfaceInterfaceType]
+    FOREIGN KEY ([InterfaceTypeId])
+    REFERENCES [InterfaceTypes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceInterfaceType'
+CREATE INDEX [IX_FK_InterfaceInterfaceType]
+ON [Interfaces]
+    ([InterfaceTypeId]);
+GO
+
+-- Creating foreign key on [NetConnectorTypeId] in table 'Interfaces'
+ALTER TABLE [Interfaces]
+ADD CONSTRAINT [FK_InterfaceNetConnectorType]
+    FOREIGN KEY ([NetConnectorTypeId])
+    REFERENCES [NetConnectorTypes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceNetConnectorType'
+CREATE INDEX [IX_FK_InterfaceNetConnectorType]
+ON [Interfaces]
+    ([NetConnectorTypeId]);
+GO
+
+-- Creating foreign key on [DeviceId] in table 'Interfaces'
+ALTER TABLE [Interfaces]
+ADD CONSTRAINT [FK_InterfaceDevice]
+    FOREIGN KEY ([DeviceId])
+    REFERENCES [Devices]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceDevice'
+CREATE INDEX [IX_FK_InterfaceDevice]
+ON [Interfaces]
+    ([DeviceId]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
