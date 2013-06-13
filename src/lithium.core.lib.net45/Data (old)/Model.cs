@@ -7,21 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace lithium.core.lib.net45.Data
+namespace lithium.core.lib.net45.Data__old_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class InterfaceType
+    public partial class Model
     {
-        public InterfaceType()
+        public Model()
         {
-            this.Interfaces = new HashSet<Interface>();
+            this.Devices = new HashSet<Device>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Line { get; set; }
+        public string Trim { get; set; }
+        public int DeviceTypeId { get; set; }
+        public int MfgrId { get; set; }
     
-        public virtual ICollection<Interface> Interfaces { get; set; }
+        public virtual DeviceType DeviceType { get; set; }
+        public virtual Mfgr Mfgr { get; set; }
+        public virtual ICollection<Device> Devices { get; set; }
     }
 }

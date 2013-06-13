@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace lithium.core.lib.net45.Data
+namespace lithium.core.lib.net45.Data__old_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class NetworkServiceType
+    public partial class Interface
     {
         public int Id { get; set; }
+        public int InterfaceTypeId { get; set; }
+        public int NetConnectorTypeId { get; set; }
+        public int DeviceId { get; set; }
+    
+        public virtual InterfaceType InterfaceType { get; set; }
+        public virtual NetConnectorType NetConnectorType { get; set; }
+        public virtual Device Device { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server Compact Edition
 -- --------------------------------------------------
--- Date Created: 06/11/2013 16:46:04
+-- Date Created: 06/12/2013 11:42:34
 -- Generated from EDMX file: C:\files\personal\proj\dev\codename-lithium\src\lithium.core.lib.net45\Data\NetDbModel.edmx
 -- --------------------------------------------------
 
@@ -308,6 +308,7 @@ ADD CONSTRAINT [FK_ModelDeviceType]
     REFERENCES [DeviceTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ModelDeviceType'
 CREATE INDEX [IX_FK_ModelDeviceType]
@@ -322,6 +323,7 @@ ADD CONSTRAINT [FK_ModelMfgr]
     REFERENCES [Mfgrs]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ModelMfgr'
 CREATE INDEX [IX_FK_ModelMfgr]
@@ -336,6 +338,7 @@ ADD CONSTRAINT [FK_DeviceOwner]
     REFERENCES [Owners]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DeviceOwner'
 CREATE INDEX [IX_FK_DeviceOwner]
@@ -350,6 +353,7 @@ ADD CONSTRAINT [FK_DeviceModel]
     REFERENCES [Models]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DeviceModel'
 CREATE INDEX [IX_FK_DeviceModel]
@@ -364,6 +368,7 @@ ADD CONSTRAINT [FK_InterfaceInterfaceType]
     REFERENCES [InterfaceTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceInterfaceType'
 CREATE INDEX [IX_FK_InterfaceInterfaceType]
@@ -378,6 +383,7 @@ ADD CONSTRAINT [FK_InterfaceNetConnectorType]
     REFERENCES [NetConnectorTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceNetConnectorType'
 CREATE INDEX [IX_FK_InterfaceNetConnectorType]
@@ -392,6 +398,7 @@ ADD CONSTRAINT [FK_InterfaceDevice]
     REFERENCES [Devices]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceDevice'
 CREATE INDEX [IX_FK_InterfaceDevice]

@@ -7,21 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace lithium.core.lib.net45.Data
+namespace lithium.core.lib.net45.Data__old_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Owner
+    public partial class NetworkServiceType
     {
-        public Owner()
-        {
-            this.Devices = new HashSet<Device>();
-        }
-    
         public int Id { get; set; }
-        public string Name { get; set; }
-    
-        public virtual ICollection<Device> Devices { get; set; }
     }
 }

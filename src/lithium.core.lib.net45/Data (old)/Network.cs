@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace lithium.core.lib.net45.Data
+namespace lithium.core.lib.net45.Data__old_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class OwnerType
+    public partial class Network
     {
         public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

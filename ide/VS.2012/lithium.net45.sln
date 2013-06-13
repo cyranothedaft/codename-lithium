@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.core.lib.net45", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.gui-wpf.net45", "..\..\src\lithium.gui-wpf.net45\lithium.gui-wpf.net45.csproj", "{7853D955-FF98-4266-A408-AA8EFB75DFCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lithium.core.lib.net45.test", "..\..\src\lithium.core.lib.net45.test\lithium.core.lib.net45.test.csproj", "{D6472149-C4BB-45AF-9206-B17B063E024B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B06EC45E-4B80-4A21-9B9F-838552E03AB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,8 +53,21 @@ Global
 		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|ARM.ActiveCfg = Release|Any CPU
 		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|x64.ActiveCfg = Release|Any CPU
 		{7853D955-FF98-4266-A408-AA8EFB75DFCD}.Release|x86.ActiveCfg = Release|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Release|x64.ActiveCfg = Release|Any CPU
+		{D6472149-C4BB-45AF-9206-B17B063E024B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6472149-C4BB-45AF-9206-B17B063E024B} = {B06EC45E-4B80-4A21-9B9F-838552E03AB6}
 	EndGlobalSection
 EndGlobal

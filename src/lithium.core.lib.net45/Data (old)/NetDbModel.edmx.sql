@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 11/18/2012 19:20:18
--- Generated from EDMX file: C:\files\priv\personal\eat\proj\dev\_github\codename-lithium\src\lithium.core.lib.net45\Data\NetDbModel.edmx
+-- Date Created: 06/12/2013 11:50:24
+-- Generated from EDMX file: C:\files\personal\proj\dev\codename-lithium\src\lithium.core.lib.net45\Data\NetDbModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [lithium.netdb];
+USE [generated01];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -336,6 +336,7 @@ ADD CONSTRAINT [FK_ModelDeviceType]
     REFERENCES [dbo].[DeviceTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ModelDeviceType'
 CREATE INDEX [IX_FK_ModelDeviceType]
@@ -350,6 +351,7 @@ ADD CONSTRAINT [FK_ModelMfgr]
     REFERENCES [dbo].[Mfgrs]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ModelMfgr'
 CREATE INDEX [IX_FK_ModelMfgr]
@@ -364,6 +366,7 @@ ADD CONSTRAINT [FK_DeviceOwner]
     REFERENCES [dbo].[Owners]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DeviceOwner'
 CREATE INDEX [IX_FK_DeviceOwner]
@@ -378,6 +381,7 @@ ADD CONSTRAINT [FK_DeviceModel]
     REFERENCES [dbo].[Models]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DeviceModel'
 CREATE INDEX [IX_FK_DeviceModel]
@@ -392,6 +396,7 @@ ADD CONSTRAINT [FK_InterfaceInterfaceType]
     REFERENCES [dbo].[InterfaceTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceInterfaceType'
 CREATE INDEX [IX_FK_InterfaceInterfaceType]
@@ -406,6 +411,7 @@ ADD CONSTRAINT [FK_InterfaceNetConnectorType]
     REFERENCES [dbo].[NetConnectorTypes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceNetConnectorType'
 CREATE INDEX [IX_FK_InterfaceNetConnectorType]
@@ -420,6 +426,7 @@ ADD CONSTRAINT [FK_InterfaceDevice]
     REFERENCES [dbo].[Devices]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_InterfaceDevice'
 CREATE INDEX [IX_FK_InterfaceDevice]

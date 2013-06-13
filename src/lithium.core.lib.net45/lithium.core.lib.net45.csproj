@@ -142,7 +142,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NetDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Data\NetDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NetDbModel.edmx</DependentUpon>
