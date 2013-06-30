@@ -13,10 +13,10 @@ namespace lithium.core.lib.net45.Data__old_
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NetDbContext : DbContext
+    public partial class NetDbContext_old : DbContext
     {
-        public NetDbContext()
-            : base("name=NetDbContext")
+        public NetDbContext_old()
+            : base("name=NetDbContext_old")
         {
         }
     

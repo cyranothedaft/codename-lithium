@@ -42,10 +42,10 @@ namespace lithium.gui_wpf.net45 {
 
       private void initMfgrList() {
          using ( var db = new NetDbContext() ) {
-            foreach ( var item in db.Mfgrs ) {
-               cboNewDeviceMfgr.Items.Add(new ComboBoxItem() { Content = item.Name });
-               cboNewDeviceModelMfgr.Items.Add(new ComboBoxItem() { Content = item.Name });
-            }
+//            foreach ( var item in db.Mfgrs ) {
+//               cboNewDeviceMfgr.Items.Add(new ComboBoxItem() { Content = item.Name });
+//               cboNewDeviceModelMfgr.Items.Add(new ComboBoxItem() { Content = item.Name });
+//            }
          }
       }
 

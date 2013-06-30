@@ -12,7 +12,7 @@ namespace lithium.core.lib.net45
     public class Class1
     {
        public void test() {
-          var n = new Network();
+//===          var n = new Network();
        }
     }
 }

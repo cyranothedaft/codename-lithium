@@ -260,7 +260,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NetDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="NetDbContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NetDbContext_old" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Models" EntityType="NetDbModel.Model" />
           <EntitySet Name="DeviceTypes" EntityType="NetDbModel.DeviceType" />
           <EntitySet Name="Mfgrs" EntityType="NetDbModel.Mfgr" />
@@ -530,7 +530,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="NetDbModelStoreContainer" CdmEntityContainer="NetDbContext">
+  <EntityContainerMapping StorageEntityContainer="NetDbModelStoreContainer" CdmEntityContainer="NetDbContext_old">
     <EntitySetMapping Name="Models">
       <EntityTypeMapping TypeName="IsTypeOf(NetDbModel.Model)">
         <MappingFragment StoreEntitySet="Models">

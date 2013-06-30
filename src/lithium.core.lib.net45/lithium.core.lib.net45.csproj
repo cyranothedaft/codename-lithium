@@ -57,10 +57,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\ide\VS.2012\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,82 +71,117 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\Device.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\DeviceType.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\FactorySettings.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Interface.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\InterfaceType.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\IpAddrAssignType.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Location.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Mfgr.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Model.cs">
-      <DependentUpon>NetDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\NetConnectorType.cs">
+    <Compile Include="Data\Machine.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\NetDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NetDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NetDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data %28old%29\Device.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\DeviceType.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\FactorySettings.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\Interface.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\InterfaceType.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\IpAddrAssignType.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\Location.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\Mfgr.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\Model.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\NetConnectorType.cs">
+      <DependentUpon>NetDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data %28old%29\NetDbModel.Context.cs">
       <DependentUpon>NetDbModel.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Data\NetDbModel.cs">
+    <Compile Include="Data %28old%29\NetDbModel.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Data\NetDbModel.Designer.cs">
+    <Compile Include="Data %28old%29\NetDbModel.Designer.cs">
       <DependentUpon>NetDbModel.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Data\Network.cs">
+    <Compile Include="Data %28old%29\Network.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\NetworkNode.cs">
+    <Compile Include="Data %28old%29\NetworkNode.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\NetworkService.cs">
+    <Compile Include="Data %28old%29\NetworkService.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\NetworkServiceType.cs">
+    <Compile Include="Data %28old%29\NetworkServiceType.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\OperatingSystem.cs">
+    <Compile Include="Data %28old%29\OperatingSystem.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Owner.cs">
+    <Compile Include="Data %28old%29\Owner.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\OwnerType.cs">
+    <Compile Include="Data %28old%29\OwnerType.cs">
       <DependentUpon>NetDbModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Data\NetDbModel.edmx">
+    <EntityDeploy Include="Data %28old%29\NetDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NetDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Data %28old%29\NetDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetDbModel.edmx</DependentUpon>
+      <LastGenOutput>NetDbModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data %28old%29\NetDbModel.edmx.diagram">
+      <DependentUpon>NetDbModel.edmx</DependentUpon>
+    </None>
+    <None Include="Data %28old%29\NetDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetDbModel.edmx</DependentUpon>
+      <LastGenOutput>NetDbModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Data\NetDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NetDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Data\NetDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NetDbModel.edmx</DependentUpon>
@@ -153,7 +190,6 @@
     <None Include="Data\NetDbModel.edmx.diagram">
       <DependentUpon>NetDbModel.edmx</DependentUpon>
     </None>
-    <None Include="Data\NetDbModel.edmx.sqlce" />
     <None Include="Data\NetDbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NetDbModel.edmx</DependentUpon>
@@ -163,9 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\NetDbModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -189,6 +222,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
